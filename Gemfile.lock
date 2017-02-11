@@ -159,7 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3.6)
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
@@ -167,7 +167,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   puma (~> 3.0)
   rails (~> 5.0.1)
-  sass-rails (~> 5.0)
+  sass-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
