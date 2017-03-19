@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :destroy]
   
   root  'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
