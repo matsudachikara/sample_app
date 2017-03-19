@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
   devise_for :users, :controllers => {
-    :registrations => "registrations"
+    registrations: 'registrations',
+    sessions: 'users/sessions'
   }
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
   
   root  'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
