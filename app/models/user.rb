@@ -1,12 +1,13 @@
 class User < ApplicationRecord
+  
+  has_many :microposts, dependent: :destroy
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:name]
 
-  
   validates :name, uniqueness: { case_sensitive: false },  presence: true, length: { maximum: 50 }
 
   def self.find_first_by_auth_conditions(warden_conditions)
