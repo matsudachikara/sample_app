@@ -9,6 +9,7 @@ class User < ApplicationRecord
          :authentication_keys => [:name]
 
   validates :name, uniqueness: { case_sensitive: false },  presence: true, length: { maximum: 50 }
+  validates :email, presence: true
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -26,6 +27,10 @@ class User < ApplicationRecord
 
   def email_changed?
     false
+  end
+  
+  def feed
+    Micropost.where(user_id: id)
   end
   
 end
