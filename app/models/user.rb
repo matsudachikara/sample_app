@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: { case_sensitive: false },  presence: true, length: { maximum: 50 }
   validates :email, presence: true
-
+  
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if name = conditions.delete(:name)
